@@ -156,9 +156,11 @@ document.getElementById("copy-link").addEventListener("click", async () => {
 const showcode = document.getElementById("showcode");
 document.getElementById("fullscreen-btn").addEventListener("click", () => {
   if (!squadCode) toast("Showing the QR code only. Add your code to show it too.");
+  document.documentElement.classList.add("code-open"); // hides the page behind, including under the browser's toolbars
   showcode.showModal();
 });
 document.getElementById("showcode-close").addEventListener("click", () => showcode.close());
+showcode.addEventListener("close", () => document.documentElement.classList.remove("code-open"));
 
 /* Pages
    The site is one HTML file with four sections (Home, My code, Guide, Rules).
