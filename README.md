@@ -1,54 +1,67 @@
 # UniZy Squad website
 
-The website for UniZy Squad members, hosted on GitHub Pages at squad.unizy.app.
-It's plain HTML, CSS and JavaScript, with no framework and no build step.
+The website for UniZy Squad members, UniZy's referral programme. It explains how the Squad works, gives each member a page with their Squad Code and a QR code to show students, and answers the questions students commonly ask.
 
-## What's in each file
+It's a static site built with plain HTML, CSS and JavaScript, with no framework and no build step. It's hosted on GitHub Pages at squad.unizy.app.
 
-| File | What it does |
+## Project structure
+
+```
+index.html        All page content
+404.html          Page shown for addresses that don't exist
+css/style.css     Styles, including dark mode
+js/main.js        Site behaviour and settings
+js/qrcode.js      QR code generator (third-party library)
+images/           Logo, icons, hero image, app screenshots and link preview image
+```
+
+## Pages
+
+The site is a single HTML file with four sections, each marked with a comment in `index.html`:
+
+- **Home**: what the Squad is, how it works, what members get and who can join.
+- **My code**: the member's Squad Code and a QR code for downloading UniZy, with a full-screen view for showing students in person.
+- **Guide**: what UniZy is, its categories, how it differs from competitors, the sign-up and home screens with numbered explanations, payments and verification codes, Featured Listings, Stripe onboarding and where to get help.
+- **Rules**: the Squad rules, with a link to the full Terms and Conditions on unizy.app.
+
+The part of the address after `#` decides which section is shown, for example `squad.unizy.app/#rules`. An address with no `#`, or one that doesn't match a section, shows Home.
+
+## How the Squad Code works
+
+Squad Codes are three characters followed by a fixed `🩷UniZy` ending. Members type their three characters on the My code page, and the page shows the full code.
+
+The code is saved in the browser's local storage on that device, so it's still there when the member comes back. It isn't sent anywhere, and the site has no server or database. Opening the site with a code in the address, such as `squad.unizy.app/?code=ABC#code`, fills the code in and saves it automatically.
+
+## How the QR code works
+
+The QR code points to the unified UniZy download link. Once a member has entered their code, the link includes it, for example `https://api.unizy.app/download?code=ABC`. The QR code is drawn in the browser by `js/qrcode.js` and updates as soon as the code changes.
+
+## Settings
+
+The values most likely to change are at the top of `js/main.js`:
+
+| Setting | Purpose |
 |---|---|
-| `index.html` | All the page content. The site has four sections (Home, My code, Guide, Rules) in this one file, each marked with a comment like `<!-- ===== GUIDE ===== -->`. |
-| `css/style.css` | The design. Colours are at the top, in `:root`, followed by a dark mode version, then a section for each part of the site. |
-| `js/main.js` | How the site behaves: switching sections, the Squad Code box, the QR code and the full-screen view. The settings you're most likely to change are at the top. |
-| `js/qrcode.js` | The QR code generator ([qrcode-generator](https://github.com/kazuhikoarase/qrcode-generator) by Kazuhiko Arase, MIT licence). You don't need to edit it. |
-| `images/` | Logo, favicon, home screen icon, the hero image, the two app screenshots and the image shown when the link is shared. |
-| `404.html` | The page shown for a broken link. |
+| `DOWNLOAD_LINK` | The unified UniZy download link used by the QR code and the Copy download link button |
+| `CODE_PARAM` | The name used for the code in the download link (`code`) |
+| `RULES_UPDATED` | The date shown at the top of the Rules page |
 
-## Common changes
+Colours are defined as variables at the top of `css/style.css`, with separate values for dark mode.
 
-**Updating the rules.** Edit the Do and Don't lists in the RULES section of `index.html`, change `RULES_UPDATED` at the top of `js/main.js`, and paste the same rules into the WhatsApp community description so both match.
+## Design
 
-**Changing Guide text.** Edit the GUIDE section of `index.html`.
+The site is designed for phones first and adapts to larger screens. It follows the device's light or dark mode setting. The font is Plus Jakarta Sans, loaded from Google Fonts, and the colours follow the UniZy brand gradient.
 
-**Changing the download link.** Edit `DOWNLOAD_LINK` at the top of `js/main.js`. The QR code updates automatically.
+## External resources
 
-**Changing the code part of the link.** The QR code points to `DOWNLOAD_LINK?code=ABC`. If the devs want a different word than `code`, change `CODE_PARAM` at the top of `js/main.js`.
+- **Google Fonts** for the Plus Jakarta Sans font.
+- **[qrcode-generator](https://github.com/kazuhikoarase/qrcode-generator)** by Kazuhiko Arase, included as `js/qrcode.js`.
 
-**Replacing a screenshot.** Overwrite the file in `images/` with one of the same name. Keep it about 600 px wide so the page stays fast.
+No analytics, cookies or tracking are used.
 
-**Changing colours.** Edit the variables at the top of `css/style.css`. The dark mode colours are in the two blocks just below.
+## Hosting
 
-## Links that fill in a member's code
-
-`https://squad.unizy.app/?code=ABC#code` opens the My code page with the code ABC already filled in and saved on that device. This is the link to use in the joining email.
-
-## Publishing on GitHub Pages
-
-1. In the UniZy Squad GitHub account, create a **public** repository, for example `squad-site`.
-2. Choose **Add file**, then **Upload files**, and drag in everything from this folder, keeping the folders as they are. `index.html` must be at the top level, not inside another folder.
-3. Go to **Settings**, then **Pages**. Under Build and deployment, set Source to **Deploy from a branch**, Branch to **main** and the folder to **/ (root)**, then save.
-4. Once the domain is verified and the devs' DNS records are live, enter `squad.unizy.app` under **Custom domain** and save. GitHub adds a file called `CNAME` to the repository; leave it there.
-5. When the option appears, tick **Enforce HTTPS**. The site won't load on squad.unizy.app until this is done, because .app addresses only work over HTTPS.
-
-After that, any file you change or upload goes live within a minute or two.
-
-## Analytics (Umami)
-
-The code is already in `index.html` but switched off. Sign up for Umami, add the site, then in the `<head>` of `index.html` paste your website ID in place of `YOUR-WEBSITE-ID` and remove the `<!--` and `-->` around that script line. The buttons already carry `data-umami-event` labels, so Umami will count uses of Show full screen and Copy download link.
-
-## Trying it on your computer
-
-Double-click `index.html` to open it in your browser. Everything works offline except the font, which loads from Google Fonts.
+The site is published by GitHub Pages from the root of the `main` branch, with squad.unizy.app as the custom domain over HTTPS. Changes pushed to `main` go live automatically.
 
 ## Copyright
 

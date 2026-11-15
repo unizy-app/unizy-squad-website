@@ -21,9 +21,6 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
     <meta name="theme-color" content="#FBFBFB" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#01022E" media="(prefers-color-scheme: dark)" />
-    <!-- Analytics (Umami): paste your website ID and remove the comment markers to switch on.
-<script defer src="https://cloud.umami.is/script.js" data-website-id="YOUR-WEBSITE-ID"></script>
--->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -231,17 +228,8 @@
           </div>
 
           <div class="code-actions">
-            <button
-              type="button"
-              class="btn btn-main"
-              id="fullscreen-btn"
-              data-umami-event="Show code full screen"
-            >
-              Show full screen
-            </button>
-            <button type="button" class="btn btn-quiet" id="copy-link" data-umami-event="Copy download link">
-              Copy download link
-            </button>
+            <button type="button" class="btn btn-main" id="fullscreen-btn">Show full screen</button>
+            <button type="button" class="btn btn-quiet" id="copy-link">Copy download link</button>
             <button type="button" class="btn btn-quiet" id="change-code" hidden>Change code</button>
           </div>
           <p class="small-hint">If the QR code won’t scan, turn your screen brightness up.</p>
