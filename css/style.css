@@ -500,11 +500,11 @@ h3 {
   justify-content: center;
   margin-top: 20px;
 }
-.small-hint {
+.doc .small-hint {
   text-align: center;
   color: var(--muted);
   font-size: 14px;
-  margin: 14px 0 0;
+  margin: 20px 0 0;
 }
 dialog.showcode {
   border: 0;
