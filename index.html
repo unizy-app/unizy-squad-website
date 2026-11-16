@@ -31,15 +31,30 @@
   </head>
   <body>
     <header class="site-header">
-      <div class="wrap">
+      <div class="wrap header-row">
         <a class="brand" href="#home" aria-label="UniZy Squad home"
-          ><img src="images/icon.png" alt="" /><span class="brand-text">UniZy Squad</span></a
-        >
+          ><picture
+            ><source srcset="images/squad-logo-white.png" media="(prefers-color-scheme: dark)" />
+            <img class="brand-logo" src="images/squad-logo-navy.png" alt="" /></picture
+        ></a>
         <nav class="nav" aria-label="Main">
           <a href="#code" data-view-link="code">My code</a>
           <a href="#guide" data-view-link="guide">Guide</a>
           <a href="#rules" data-view-link="rules">Rules</a>
         </nav>
+        <a class="site-link" href="https://unizy.app" target="_blank" rel="noopener"
+          >unizy.app<svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M7 17 17 7" />
+            <path d="M8 7h9v9" /></svg
+        ></a>
       </div>
     </header>
 
@@ -91,7 +106,9 @@
               </li>
             </ol>
             <p class="steps-note">
-              On days with new activity, you’ll get an earnings update by email at around 10 pm.
+              Your joining email explains the payment structure in full, including what you earn for each
+              sign-up and listing. On days with new activity, you’ll also get an earnings update by email at
+              around 10 pm.
             </p>
           </div>
         </section>
@@ -204,10 +221,10 @@
                 maxlength="3"
                 placeholder="ABC"
                 aria-describedby="code-hint"
-              /><span class="code-suffix" aria-hidden="true">🩷UniZy</span>
+              /><span class="code-suffix" aria-hidden="true">❤️UniZy</span>
             </div>
             <p class="hint" id="code-hint">
-              Type the three characters before <span class="nw">🩷UniZy</span>. It’s only saved on this
+              Type the three characters before <span class="nw">❤️UniZy</span>. It’s only saved on this
               device.
             </p>
           </div>
@@ -218,9 +235,9 @@
             <div class="cc-divider"></div>
             <div class="code-filled">
               <p class="cc-label">Then enter this Squad Code</p>
-              <p class="cc-code"><span class="code-part"></span><span class="sfx">🩷UniZy</span></p>
+              <p class="cc-code"><span class="code-part"></span><span class="sfx">❤️UniZy</span></p>
               <p class="cc-note">
-                They only type <strong class="code-part"></strong>. The <span class="nw">🩷UniZy</span> part
+                They only type <strong class="code-part"></strong>. The <span class="nw">❤️UniZy</span> part
                 is already filled in.
               </p>
             </div>
@@ -378,8 +395,9 @@
               <li>
                 <strong>UK postcode</strong
                 ><span
-                  >Used to show how far away listings are and to fill in the student’s city. It isn’t shown to
-                  other users.</span
+                  >UniZy uses it to work out how far away each listing is, so students can see and filter
+                  listings near them. It also fills in their city automatically. Their postcode is never shown
+                  to other users.</span
                 >
               </li>
               <li>
@@ -394,7 +412,7 @@
               <li>
                 <strong>Squad Code</strong
                 ><span
-                  >Students enter your code here. The <span class="nw">🩷UniZy</span> part is already filled
+                  >Students enter your code here. The <span class="nw">❤️UniZy</span> part is already filled
                   in, so they only type the three characters before it. Once it’s accepted, your name appears
                   under the box. Codes can’t be added after sign-up, and they aren’t discount codes.</span
                 >
@@ -421,14 +439,17 @@
             <ol class="legend">
               <li>
                 <strong>My Listings</strong
-                ><span>Listings you’ve posted. Sellers enter the buyer’s code here to complete a sale.</span>
+                ><span
+                  >Listings you’ve posted. Sellers enter the buyer’s transaction verification code here to
+                  complete a sale.</span
+                >
               </li>
               <li><strong>Bookmarks</strong><span>Listings you’ve saved for later.</span></li>
               <li><strong>Categories</strong><span>Browse each of the five categories.</span></li>
               <li><strong>Featured Listings</strong><span>Promoted listings. More on these below.</span></li>
               <li>
                 <strong>Transactions</strong
-                ><span>Your purchases and sales. Buyers find their code here.</span>
+                ><span>Your purchases and sales. Buyers find their transaction verification code here.</span>
               </li>
               <li><strong>New Listing</strong><span>Post something to sell or offer.</span></li>
               <li><strong>Chat</strong><span>Message buyers and sellers.</span></li>
@@ -439,7 +460,7 @@
           <h3>How does paying work, and why is it safer?</h3>
           <ol class="mini-steps">
             <li>The buyer pays in the app, and UniZy holds the money.</li>
-            <li>A six-digit code appears in the buyer’s Transactions tab.</li>
+            <li>A six-digit transaction verification code appears in the buyer’s Transactions tab.</li>
             <li>Once the buyer has the item or service, they give the code to the seller.</li>
             <li>The seller enters it in My Listings, and the payment is released.</li>
           </ol>
@@ -711,7 +732,7 @@
         <div class="qr-tile"></div>
         <div class="code-filled">
           <p class="cc-label" style="margin-top: 14px">Then enter this Squad Code</p>
-          <p class="cc-code"><span class="code-part"></span><span class="sfx">🩷UniZy</span></p>
+          <p class="cc-code"><span class="code-part"></span><span class="sfx">❤️UniZy</span></p>
         </div>
       </div>
     </dialog>

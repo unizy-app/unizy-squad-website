@@ -144,26 +144,28 @@ h3 {
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
-.site-header .wrap {
+.header-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   height: 64px;
-  gap: 16px;
+  gap: 8px;
+}
+.header-row .brand {
+  margin-right: auto;
 }
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
   text-decoration: none;
-  color: var(--text);
-  font-weight: 800;
-  font-size: 18px;
-  letter-spacing: -0.02em;
 }
-.brand img {
-  width: 34px;
-  height: 34px;
+/* Navy logo in light mode, white logo in dark mode (chosen by the <picture> element in the header) */
+.brand picture {
+  display: block;
+}
+.brand-logo {
+  display: block;
+  height: 42px;
+  width: auto;
 }
 .nav {
   display: flex;
@@ -180,6 +182,24 @@ h3 {
 .nav a[aria-current="page"] {
   color: var(--text);
   background: var(--chip);
+}
+.site-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+  padding: 7px 12px 7px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.site-link svg {
+  width: 15px;
+  height: 15px;
 }
 
 /* Buttons */
@@ -512,7 +532,7 @@ dialog.showcode {
   margin: 0;
   width: 100vw;
   height: 100vh;
-  height: 100dvh; /* the visible height, which shrinks when the browser's toolbars show */
+  height: 100dvh;
   max-width: 100vw;
   max-height: 100vh;
   max-height: 100dvh;
@@ -534,7 +554,7 @@ dialog.showcode::backdrop {
 }
 .showcode .qr-tile {
   width: min(78vw, 340px);
-  width: min(78vw, 340px, 46dvh); /* keeps everything on screen on shorter displays */
+  width: min(78vw, 340px, 46dvh);
   padding: 18px;
   box-shadow: none;
 }
@@ -566,7 +586,6 @@ dialog.showcode::backdrop {
   width: 22px;
   height: 22px;
 }
-/* While the full-screen view is open, the page behind it is hidden */
 .code-open body {
   overflow: hidden;
   background: #000263;
@@ -623,16 +642,37 @@ dialog.showcode::backdrop {
   margin: 0;
 }
 
-/* Header on phones: the logo goes home, and the "UniZy Squad" label returns on wider screens */
-@media (max-width: 599px) {
-  .brand-text {
-    display: none;
+/* Header on phones: logo, name and website link on the first row, page links on the second */
+@media (max-width: 759px) {
+  .header-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "brand link" "nav nav";
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 6px;
+    row-gap: 6px;
+  }
+  .header-row .brand {
+    grid-area: brand;
+    margin-right: 0;
+  }
+  .site-link {
+    grid-area: link;
+    margin-left: 0;
   }
   .nav {
-    gap: 2px;
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
   }
   .nav a {
-    padding: 8px 11px;
+    text-align: center;
+    padding: 8px 6px;
+  }
+  html {
+    scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 116px);
   }
 }
 

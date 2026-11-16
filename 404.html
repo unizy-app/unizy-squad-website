@@ -15,10 +15,25 @@
   </head>
   <body>
     <header class="site-header">
-      <div class="wrap">
+      <div class="wrap header-row">
         <a class="brand" href="/" aria-label="UniZy Squad home"
-          ><img src="/images/icon.png" alt="" /><span class="brand-text">UniZy Squad</span></a
-        >
+          ><picture
+            ><source srcset="/images/squad-logo-white.png" media="(prefers-color-scheme: dark)" />
+            <img class="brand-logo" src="/images/squad-logo-navy.png" alt="" /></picture
+        ></a>
+        <a class="site-link" href="https://unizy.app" target="_blank" rel="noopener"
+          >unizy.app<svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M7 17 17 7" />
+            <path d="M8 7h9v9" /></svg
+        ></a>
       </div>
     </header>
     <main>

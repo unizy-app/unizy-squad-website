@@ -28,7 +28,7 @@ The part of the address after `#` decides which section is shown, for example `s
 
 ## How the Squad Code works
 
-Squad Codes are three characters followed by a fixed `🩷UniZy` ending. Members type their three characters on the My code page, and the page shows the full code.
+Squad Codes are three characters followed by a fixed `❤️UniZy` ending. Members type their three characters on the My code page, and the page shows the full code.
 
 The code is saved in the browser's local storage on that device, so it's still there when the member comes back. It isn't sent anywhere, and the site has no server or database. Opening the site with a code in the address, such as `squad.unizy.app/?code=ABC#code`, fills the code in and saves it automatically.
 
