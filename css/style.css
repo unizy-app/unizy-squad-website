@@ -355,8 +355,13 @@ h3 {
 }
 .who p {
   margin: 12px 0 0;
-  max-width: 52ch;
-  font-size: 17px;
+  max-width: 56ch;
+  color: var(--muted);
+}
+.join p {
+  margin: 12px 0 24px;
+  max-width: 56ch;
+  color: var(--muted);
 }
 .support {
   margin: 0;

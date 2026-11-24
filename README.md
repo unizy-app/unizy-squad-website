@@ -19,7 +19,7 @@ images/           Logo, icons, hero image, app screenshots and link preview imag
 
 The site is a single HTML file with four sections, each marked with a comment in `index.html`:
 
-- **Home**: what the Squad is, how it works, what members get and who can join.
+- **Home**: what the Squad is, how it works, what members get, who can join and how to apply by email.
 - **My code**: the member's Squad Code and a QR code for downloading UniZy, with a full-screen view for showing students in person.
 - **Guide**: what UniZy is, its categories, how it differs from competitors, the sign-up and home screens with numbered explanations, payments and verification codes, Featured Listings, Stripe onboarding and where to get help.
 - **Rules**: the Squad rules, with a link to the full Terms and Conditions on unizy.app.
